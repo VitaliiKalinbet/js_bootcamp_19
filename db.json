@@ -1,0 +1,24 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "author": "Bootcamp19",
+      "title": "Some post title"
+    },
+    {
+      "author": "Bootcamp19",
+      "title": "zxcvxv xd vxxv",
+      "id": 2
+    },
+    {
+      "author": "Bootcamp209",
+      "title": "324523434",
+      "id": 3
+    },
+    {
+      "author": "Bootcamp19",
+      "title": "vcbcvbcvb",
+      "id": 4
+    }
+  ]
+}

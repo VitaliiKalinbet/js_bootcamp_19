@@ -1,8 +1,8 @@
 :root {
   /* fonts */
   --font-main: 'Montserrat', sans-serif;
-  --font-second: 'Acrom', sans-serif;
-  --font-color-main: 16px;
+  --font-second: 'Open Sans', sans-serif;
+  --font-color-main: green;
 
   /* footer background-color */
   --footer-bg: #a14f4f;

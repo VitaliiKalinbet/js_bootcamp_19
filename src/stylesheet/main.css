@@ -33,7 +33,7 @@ button:focus {
   outline: none;
 }
 
-h1 {
-  font-family: var(--font-main);
-  font-size: var(--font-color-main);
+.intro {
+  font-family: var(--font-second);
+  color: var(--font-color-main);
 }

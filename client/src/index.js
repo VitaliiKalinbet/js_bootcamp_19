@@ -30,7 +30,7 @@ function editorSubmitHandler(e) {
   const input = form.elements.message;
 
   if (input.value.trim() === '') {
-    alert('Введи сообщение, животное!');
+    alert('Введи сообщение!');
     return;
   }
 

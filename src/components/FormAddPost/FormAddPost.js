@@ -11,6 +11,7 @@ function createForm() {
   inputAuthor.setAttribute('required', 'true');
   inputTitle.setAttribute('required', 'true');
   buttonAddPost.setAttribute('type', 'submit');
+  buttonAddPost.setAttribute('data-action', 'create');
   inputAuthor.setAttribute('placeholder', 'author');
   inputTitle.setAttribute('placeholder', 'title');
   buttonAddPost.textContent = 'Create post';
@@ -22,19 +23,26 @@ createForm();
 
 async function addPost(e) {
   e.preventDefault();
-  const inputAuthor = document.querySelector('input[placeholder="author"]');
-  const inputTitle = document.querySelector('input[placeholder="title"]');
+  if (
+    e.target.elements[2].tagName === 'BUTTON' &&
+    e.target.elements[2].dataset.action === 'create'
+  ) {
+    if (e.target.elements[3]) return;
 
-  try {
-    const res = await services.addPost(inputAuthor.value, inputTitle.value);
-    const item = postListItem(res);
-    services.refs.List.insertAdjacentHTML('beforeend', item);
-  } catch (err) {
-    console.warn(err);
+    const inputAuthor = document.querySelector('input[placeholder="author"]');
+    const inputTitle = document.querySelector('input[placeholder="title"]');
+
+    try {
+      const res = await services.addPost(inputAuthor.value, inputTitle.value);
+      const item = postListItem(res);
+      services.refs.List.insertAdjacentHTML('beforeend', item);
+    } catch (err) {
+      console.warn(err);
+    }
+
+    inputAuthor.value = '';
+    inputTitle.value = '';
   }
-
-  inputAuthor.value = '';
-  inputTitle.value = '';
 }
 
 // function addPost(e) {

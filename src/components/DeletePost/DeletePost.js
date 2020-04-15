@@ -1,7 +1,7 @@
 import services from '../../services/services';
 
 async function deletePostFunction(e) {
-  if (e.target.nodeName === 'BUTTON') {
+  if (e.target.nodeName === 'BUTTON' && e.target.dataset.action === 'delete') {
     const id = e.target.dataset.id;
 
     try {

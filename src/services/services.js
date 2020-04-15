@@ -69,4 +69,21 @@ export default {
       throw err;
     }
   },
+
+  updatePost(postId, update) {
+    const url = `/${postId}`;
+    const options = {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(update),
+    };
+
+    return fetch(baseUrl + url, options)
+      .then(res => res.json())
+      .catch(err => {
+        throw err;
+      });
+  },
 };
